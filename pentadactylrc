@@ -1,0 +1,72 @@
+"3.5 (created: 2012/08/04 00:41:20)
+
+source! /Users/yangchenyun/.pentadactyl
+
+" use , as <leader>
+map , <leader>
+
+" map jj to escape
+
+cmap jj <Esc>
+imap jj <Esc>
+
+nmap J <C-d>
+nmap K <C-u>
+nmap h gT
+nmap l gt
+
+" T to open unfocused tab
+nmap T :tabopen!
+
+" common OS X shortcuts
+nmap <C-c> <C-v><C-c>
+nmap <C-a> <C-v><C-a>
+cmap <C-c> <C-v><C-c>
+cmap <C-v> <C-v><C-v>
+cmap <C-x> <C-v><C-x>
+imap <C-a> <C-v><C-a>
+imap <C-c> <C-v><C-c>
+imap <C-v> <C-v><C-v>
+imap <C-x> <C-v><C-x>
+imap <C-z> <C-v><C-z>
+imap <C-y> <C-v><C-y>
+
+" website shortcuts 
+nmap <leader>tm :tabopen mail.google.com<cr>
+nmap <leader>tr :tabopen www.google.com/reader<cr>
+
+" auto pass-through mode
+" autocmd LocationChange .* :js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL) || /google\.com\/reader\//.test(buffer.URL) 
+
+" autoload config file
+map <leader>s :so "~/.pentadactylrc"<cr>
+
+" Chinese support for nextpatten
+set nextpattern=\s*下一页|下一张|下页\s*,\bnext\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\bm\b
+set previouspattern=\s*上一页|上一张|上页\s*,\bprev|previous\b,^<$,^(<|«)$,^(<|«),(<|«)$
+
+" Set hint keys on the home row
+set hintkeys=asdfghjkl;
+
+
+" remove links from auto focus
+set activate-=links
+
+set newtab+=help,prefs
+
+set guioptions=Tnrs
+
+colorscheme simple_dark
+
+set editor='~/mvim -f +<line> +"sil! call cursor(0, <column>" <file>'
+
+" where the first key name is treated as a list of individual keys and each subsequent key is treated as a key chain
+set passkeys+=mail.google.com:jka<cr>,gi
+
+set titlestring="Firefox ❤  Vim"
+
+set hlfind
+map <leader>/ :nohlfind<cr>
+
+set scrollsteps=30
+set scrolltime=200
