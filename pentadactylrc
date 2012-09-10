@@ -41,13 +41,12 @@ nmap <leader>tr :tabopen www.google.com/reader<cr>
 " autoload config file
 map <leader>s :so "~/.pentadactylrc"<cr>
 
-" Chinese support for nextpatten
-set nextpattern=\s*下一页|下一张|下页\s*,\bnext\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\bm\b
-set previouspattern=\s*上一页|上一张|上页\s*,\bprev|previous\b,^<$,^(<|«)$,^(<|«),(<|«)$
+" Support for nextpatten
+set nextpattern=\s*下一页|下一张|下页\s*,\bnext|Older|older\b,^$,^>$,^(→|>>|»)$,^(→|>|»),(→|>|»)$
+set previouspattern=\s*上一页|上一张|上页\s*,\bprev|previous|newer|Newer\b,^<$,^(←|<|«)$,^(←|<|«),(←|<|«)$
 
 " Set hint keys on the home row
 set hintkeys=asdfghjkl;
-
 
 " remove links from auto focus
 set activate-=links
