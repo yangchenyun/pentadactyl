@@ -70,3 +70,7 @@ map <leader>/ :nohlfind<cr>
 
 set scrollsteps=15
 set scrolltime=150
+
+" passkeys to certain webapp
+" Trello.com
+set passkeys+=trello.com:@#^abcdfxlqvns?123456<><space><left><right><up><down><Esc><cr>
