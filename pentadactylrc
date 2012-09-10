@@ -48,6 +48,7 @@ set previouspattern=\s*上一页|上一张|上页\s*,\bprev|previous|newer|Newer
 " Set hint keys on the home row
 set hintkeys=asdfghjkl;
 
+
 " remove links from auto focus
 set activate-=links
 
@@ -67,5 +68,5 @@ set titlestring="Firefox ❤  Vim"
 set hlfind
 map <leader>/ :nohlfind<cr>
 
-set scrollsteps=30
-set scrolltime=200
+set scrollsteps=15
+set scrolltime=150
