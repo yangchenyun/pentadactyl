@@ -12,6 +12,7 @@ imap jj <Esc>
 
 nmap J <C-d>
 nmap K <C-u>
+
 nmap h gT
 nmap l gt
 
@@ -48,7 +49,6 @@ set previouspattern=\s*上一页|上一张|上页\s*,\bprev|previous|newer|Newer
 " Set hint keys on the home row
 set hintkeys=asdfghjkl;
 
-
 " remove links from auto focus
 set activate-=links
 
@@ -72,5 +72,11 @@ set scrollsteps=15
 set scrolltime=150
 
 " passkeys to certain webapp
-" Trello.com
-set passkeys+=trello.com:@#^abcdfxlqvns?123456<><space><left><right><up><down><Esc><cr>
+" Trello.com 
+" not mapping l
+set passkeys+=trello.com:@#^abcdfxqvns?123456<><space><left><right><up><down><Esc><cr>
+
+" Bookmarklet shortcuts
+com! rl -desc 'Send current page to Instapaper' open javascript:function%20iprl5(){var%20d=document,z=d.createElement('scr'+'ipt'),b=d.body,l=d.location;try{if(!b)throw(0);d.title='(Saving...)%20'+d.title;z.setAttribute('src',l.protocol+'//www.instapaper.com/j/nPuv4crMQ5fy?u='+encodeURIComponent(l.href)+'&t='+(new%20Date().getTime()));b.appendChild(z);}catch(e){alert('Please%20wait%20until%20the%20page%20has%20loaded.');}}iprl5();void(0)
+
+com! pb -desc 'Bookmark current page to pinboard' open javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('https://pinboard.in/add?showtags=yes&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard','toolbar=no,scrollbars=yes,width=750,height=700'));
