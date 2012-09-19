@@ -34,7 +34,9 @@ imap <C-y> <C-v><C-y>
 
 " website shortcuts 
 nmap <leader>tm :tabopen mail.google.com<cr>
-nmap <leader>tr :tabopen www.google.com/reader<cr>
+nmap <leader>tw :tabopen web.tweetdeck.com<cr>
+nmap <leader>gh :tabopen www.github.com<cr>
+nmap <leader>zh :tabopen www.zhihu.com<cr>
 
 " auto pass-through mode
 " autocmd LocationChange .* :js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL) || /google\.com\/reader\//.test(buffer.URL) 
@@ -61,7 +63,7 @@ colorscheme simple_dark
 set editor='~/mvim -f +<line> +"sil! call cursor(0, <column>" <file>'
 
 " where the first key name is treated as a list of individual keys and each subsequent key is treated as a key chain
-set passkeys+=mail.google.com:jka<cr>,gi
+set passkeys+=mail.google.com:c/kjnpo<cr>uemxs+-!raf<space><Esc><C-s>#v<S-i><S+u>[]z<S-n>qy.?,<tab><cr>,yo,ga,gs,gc,gd,gl,gi,gt,*a,*n,*n,*r,*u,*s,*t
 
 set titlestring="Firefox ❤  Vim"
 
