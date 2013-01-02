@@ -65,6 +65,9 @@ set editor='~/mvim -f +<line> +"sil! call cursor(0, <column>" <file>'
 " where the first key name is treated as a list of individual keys and each subsequent key is treated as a key chain
 set passkeys+=mail.google.com:c/kjnpo<cr>uemxs+-!raf<space><Esc><C-s>#v<S-i><S+u>[]z<S-n>qy.?,<tab><cr>,yo,ga,gs,gc,gd,gl,gi,gt,*a,*n,*n,*r,*u,*s,*t
 
+" asana.com
+set passkeys+=app.asana.com:<cr><tab>bkspcvmadfqhs/<Esc><S><up><down>
+
 set titlestring="Firefox ❤  Vim"
 
 set hlfind
@@ -79,6 +82,8 @@ set scrolltime=150
 set passkeys+=trello.com:@#^abcdfxqvns?123456<><space><left><right><up><down><Esc><cr>
 
 " Bookmarklet shortcuts
-com! rl -desc 'Send current page to Instapaper' open javascript:function%20iprl5(){var%20d=document,z=d.createElement('scr'+'ipt'),b=d.body,l=d.location;try{if(!b)throw(0);d.title='(Saving...)%20'+d.title;z.setAttribute('src',l.protocol+'//www.instapaper.com/j/nPuv4crMQ5fy?u='+encodeURIComponent(l.href)+'&t='+(new%20Date().getTime()));b.appendChild(z);}catch(e){alert('Please%20wait%20until%20the%20page%20has%20loaded.');}}iprl5();void(0)
+command -desc "Read later on Pocket" rl-pocket :open read-later-pocket
+command -desc "Read later on Instapaper" rl-instapaper :open read-later-instapaper
+command -desc "View in Instapaper" instapaper :open text-instapaper
 
-com! pb -desc 'Bookmark current page to pinboard' open javascript:q=location.href;if(document.getSelection){d=document.getSelection();}else{d='';};p=document.title;void(open('https://pinboard.in/add?showtags=yes&url='+encodeURIComponent(q)+'&description='+encodeURIComponent(d)+'&title='+encodeURIComponent(p),'Pinboard','toolbar=no,scrollbars=yes,width=750,height=700'));
+command -desc "Save in Pinboard" pb :open save-pinboard
